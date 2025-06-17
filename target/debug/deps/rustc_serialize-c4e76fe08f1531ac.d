@@ -1,0 +1,10 @@
+/home/alouhab/drawing/target/debug/deps/librustc_serialize-c4e76fe08f1531ac.rmeta: /home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/lib.rs /home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/serialize.rs /home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/collection_impls.rs /home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/base64.rs /home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/hex.rs /home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/json.rs
+
+/home/alouhab/drawing/target/debug/deps/rustc_serialize-c4e76fe08f1531ac.d: /home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/lib.rs /home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/serialize.rs /home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/collection_impls.rs /home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/base64.rs /home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/hex.rs /home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/json.rs
+
+/home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/lib.rs:
+/home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/serialize.rs:
+/home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/collection_impls.rs:
+/home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/base64.rs:
+/home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/hex.rs:
+/home/alouhab/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-serialize-0.3.25/src/json.rs:

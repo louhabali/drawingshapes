@@ -3,7 +3,11 @@ use raster::Color;
 
 pub fn random_color() -> Color {
     let mut rng = rand::thread_rng();
-    Color::rgb(rng.gen_range(0..=255), rng.gen_range(0..=255), rng.gen_range(0..=255))
+    Color::rgb(
+        rng.gen_range(0..=255),
+        rng.gen_range(0..=255),
+        rng.gen_range(0..=255),
+    )
 }
 
 // Define the traits
@@ -28,7 +32,11 @@ pub struct Point {
 
 impl Point {
     pub fn new(x: i32, y: i32) -> Self {
-        Point { x, y, color: random_color() }
+        Point {
+            x,
+            y,
+            color: random_color(),
+        }
     }
 
     pub fn random(width: i32, height: i32) -> Self {
@@ -135,10 +143,7 @@ impl Rectangle {
         // Ensure the points are arranged as a = top-left and b = bottom-right
         let a = Point::new(p1.x.min(p2.x), p1.y.min(p2.y));
         let b = Point::new(p1.x.max(p2.x), p1.y.max(p2.y));
-        Rectangle {
-            a,
-            b,
-        }
+        Rectangle { a, b }
     }
     pub fn draw_with_color(&self, image: &mut impl Displayable, color: Color) {
         let top_right = Point::new(self.b.x, self.a.y);
@@ -177,22 +182,53 @@ impl Circle {
     }
 }
 
+// impl Drawable for Circle {
+//     fn draw(&self, img: &mut impl Displayable) {
+//         let mut deg = 0.0;
+//         let pere = ((self.radius as f64) * 4.0 * std::f64::consts::PI).max(36.);
+//         let color = self.color();
+//         while deg <= 360.0 {
+//             println!("k");
+//             let rad = ((deg as f64) * std::f64::consts::PI) / 180.0;
+//             let x = ((self.center.x as f64) + (self.radius as f64) * rad.cos()).round() as i32;
+//             let y = ((self.center.y as f64) + (self.radius as f64) * rad.sin()).round() as i32;
+//             img.display( x,  y, color.clone());
+//             deg += 360.0 / pere;
+//         }
+//     }
+// }
+
+// deffrent method
 impl Drawable for Circle {
     fn draw(&self, img: &mut impl Displayable) {
-        let mut deg = 0.0;
-        let pere = (self.radius as f64) * 2.0 * std::f64::consts::PI;
+        let mut x: i32 = 0;
+        let mut y: i32 = -self.radius;
+        let r = self.radius;
+        let mut p = x.pow(2) as f32 + (y as f32 + 0.5).powf(2.) - r.pow(2) as f32;
+        let cx = self.center.x;
+        let cy = self.center.x;
+
         let color = self.color();
-        while deg <= 360.0 {
-            let rad = ((deg as f64) * std::f64::consts::PI) / 180.0;
-            let x = ((self.center.x as f64) + (self.radius as f64) * rad.cos()).round() as i32;
-            let y = ((self.center.y as f64) + (self.radius as f64) * rad.sin()).round() as i32;
-            let point = Point {
-                x,
-                y,
-                color: color.clone(),
-            };
-            point.draw(img);
-            deg += 360.0 / pere;
+        
+        if self.radius == 0 {
+            img.display(cx + y, cy - x, color.clone());
+        }
+        while x < -y {
+            if p > 0. {
+                y += 1
+            }
+            p = x.pow(2) as f32 + (y as f32 + 0.5).powf(2.) - r.pow(2) as f32;
+
+            img.display(cx + x, cy + y, color.clone());
+            img.display(cx - x, cy + y, color.clone());
+            img.display(cx - x, cy - y, color.clone());
+            img.display(cx + x, cy - y, color.clone());
+            img.display(cx + y, cy + x, color.clone());
+            img.display(cx - y, cy + x, color.clone());
+            img.display(cx - y, cy - x, color.clone());
+            img.display(cx + y, cy - x, color.clone());
+
+            x += 1
         }
     }
 }
@@ -212,7 +248,10 @@ impl Pentagon {
 
     pub fn random(width: i32, height: i32) -> Self {
         let mut rng = rand::thread_rng();
-        Self::new(&Point::random(width, height), rng.gen_range(0..width.min(height)))
+        Self::new(
+            &Point::random(width, height),
+            rng.gen_range(0..width.min(height)),
+        )
     }
 }
 impl Drawable for Pentagon {

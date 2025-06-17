@@ -1,8 +1,8 @@
 mod geometrical_shapes;
 
 use geometrical_shapes as gs;
-use gs::{ Displayable, Drawable };
-use raster::{ Color, Image };
+use gs::{Displayable, Drawable};
+use raster::{Color, Image};
 
 fn main() {
     let mut image = Image::blank(1000, 1000);
@@ -17,7 +17,7 @@ fn main() {
     let triangle = gs::Triangle::new(
         &gs::Point::new(500, 500),
         &gs::Point::new(250, 700),
-        &gs::Point::new(700, 800)
+        &gs::Point::new(700, 800),
     );
     triangle.draw(&mut image);
 
@@ -29,6 +29,8 @@ fn main() {
     for _ in 1..5 {
         gs::Pentagon::random(image.width, image.height).draw(&mut image);
     }
+
+    gs::Circle::new(&gs::Point::new(500, 500), 300).draw(&mut image);
 
     raster::save(&image, "image.png").unwrap()
 }
