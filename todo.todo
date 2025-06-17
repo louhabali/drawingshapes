@@ -1,0 +1,27 @@
+swb fichier jdid smitou geometrical_shapes.rs//done
+
+main.rs, zid mod geometrical_shapes;//done
+
+swb trait Drawable b method draw w color//done
+
+swb trait Displayable b method display//done
+
+swb struct Point b x w y//done
+
+swb struct Line b start, end, w color//done
+
+swb struct Triangle b a, b, w c//done
+
+swb struct Rectangle b top_left w bottom_right//done
+
+swb struct Circle b center w radius//done
+
+Dir new() method f kol struct kifma katban f main.rs//done
+
+swb method random() f Line, Point, w Circle//done
+
+Importi use raster::{Color, Image}; f module //done
+
+Zid raster w rand f Cargo.toml. // hadi lwla
+
+(Bonus) Ila bghiti zid Pentagon w Cube.
